@@ -15,6 +15,18 @@
 
     <h3 id="result"></h3>
 
+    <script>
+        async function convert() {
+            const miles = document.getElementById('miles').value;
+            if (!miles) return;
+
+            const response = await fetch(`/convert?miles=${miles}`);
+            const data = await response.json();
+
+            document.getElementById('result').innerText =
+                `${miles} miles is ${data.kilometers.toFixed(2)} km`;
+        }
+    </script>
 </body>
 
 </html>
