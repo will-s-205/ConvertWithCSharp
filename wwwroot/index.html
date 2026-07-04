@@ -4,32 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Distance Converter</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h2>Miles to Kilometers Converter</h2>
-
-    <label for="miles">Enter Miles:</label> <!-- Input field for the user to enter the number of miles they want to convert. The 'step="any"' attribute allows for decimal input. -->
-    <input type="number" id="miles" step="any"> <!-- Button that, when clicked, calls the 'convertMiles' function to perform the conversion. -->
-    <button onclick="convertMiles()">Convert</button> <!-- This is where the result of the conversion will be displayed. The 'id' attribute allows the JavaScript function to easily access and update this element. -->
-    <h3 id="result"></h3>
-
-    <h2>Fahrenheit to Celsius Converter</h2>
-    <label for="fahrenheit">Enter Fahrenheit:</label>
-    <input type="number" id="fahrenheit" step="any">
-    <button onclick="convertFahrenheit()">Convert</button>
-    <h3 id="fahrenheit-result"></h3>
+    <div class="box">
+        <h2>Miles to Kilometers</h2>
+        <label for="miles">Enter Miles:</label><br>
+        <input type="number" id="miles" step="any"><br>
+        <button onclick="convertMiles()">Convert</button><br>
+        <input type="number" id="result">
+        <hr>
+        <h2>Fahrenheit to Celsius</h2>
+        <label for="fahrenheit">Enter Fahrenheit:</label><br>
+        <input type="number" id="fahrenheit" step="any"><br>
+        <button onclick="convertFahrenheit()">Convert</button><br>
+        <input type="number" id="fahrenheit-result">
+    </div>
 
     <script>
         async function convertMiles() {
-            const miles = document.getElementById('miles').value; // Get the value from the input field with id 'miles'
-            if (!miles) return; // If the input is empty, exit the function
+            const miles = document.getElementById('miles').value;
+            if (!miles) return;
 
-            const response = await fetch(`/convert-miles?miles=${miles}`); // Make a GET request to the server with the miles value as a query parameter
-            const data = await response.json(); // Parse the JSON response from the server 
+            const response = await fetch(`/convert-miles?miles=${miles}`);
+            const data = await response.json();
 
-            document.getElementById('result').innerText = // Update the inner text of the element with id 'result' to display the conversion result
-                `${miles} miles is ${data.kilometers.toFixed(2)} km`; // data.kilometers contains the converted value in kilometers, formatted to 2 decimal places
+            document.getElementById('result').value = data.kilometers.toFixed(1);
         }
 
         async function convertFahrenheit() {
@@ -39,8 +40,7 @@
             const response = await fetch(`/convert-fahrenheit?fahrenheit=${fahrenheit}`);
             const data = await response.json();
 
-            document.getElementById('fahrenheit-result').innerText =
-                `${fahrenheit}°F is ${data.celsius.toFixed(2)}°C`;
+            document.getElementById('fahrenheit-result').value = data.celsius.toFixed(1);
         }
     </script>
 </body>
