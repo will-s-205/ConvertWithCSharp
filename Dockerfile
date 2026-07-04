@@ -1,20 +1,16 @@
-# Step 1: Use the official Microsoft .NET SDK image to build the app
-FROM ://microsoft.com AS build-env
-WORKDIR /app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-# Copy the project files and restore dependencies
+WORKDIR /src
+
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy the remaining source code and build the application
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Release -o /app/publish
 
-# Step 2: Use the runtime-only image to keep the final container small
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=build /app/publish .
 
-# Expose the port Render uses and start the app
-EXPOSE 8080
-ENTRYPOINT ["dotnet", "UnitConverter.dll"]
+EXPOSE 3000
+CMD ["dotnet", "UnitConverter.dll"]
