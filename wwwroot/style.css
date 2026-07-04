@@ -4,6 +4,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #006266;
         }
 
         .box {
@@ -11,6 +12,8 @@
             padding: 20px;
             width: 300px;
             text-align: center;
+            background: #e4e4e4;
+            border-radius: 10px;
         }
 
         input {
