@@ -1,6 +1,6 @@
 # Unit Converter
 ### Click project live below:
-[![Unit Converter](https://github.com/will-s-205/will-s-205.github.io/blob/main/fcc-portfolio/img/2026-07-03%20unit%20converter%20cover.png)](https://unit-converter--rigo205.replit.app)
+[![Unit Converter](https://github.com/will-s-205/will-s-205.github.io/blob/main/fcc-portfolio/img/2026-07-03%20unit%20converter%20cover.png)](https://unit-converter-p6pb.onrender.com/)
 Unit Converter is a simple web application built with C# and Minimal API that converts miles to kilometers and Fahrenheit to Celsius. The application uses an HTML interface with JavaScript to send user input to C# API endpoints, where the calculations are performed on the server. The results are returned as JSON and displayed on the webpage. This project demonstrates the basics of creating endpoints, handling HTTP requests, and connecting a frontend with a C# backend.
 ## Goal
 Build a simple web application that performs unit conversions by connecting an HTML frontend with a C# backend using Minimal APIs.
@@ -15,7 +15,10 @@ Build a simple web application that performs unit conversions by connecting an H
 
 ===
 
-## How to run:
+If hosted on Render: https://render.com/
+
+===
+## How to run locally:
 Win11
 * Make sure to install dotnet8 SDK https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.422-windows-x64-installer
 * open your terminal and find folder with project
