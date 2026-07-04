@@ -20,4 +20,3 @@ app.MapGet("/convert-fahrenheit", (double fahrenheit) =>
 app.MapFallbackToFile("index.html"); // This line defines a fallback route for the application. If a request is made to a URL that doesn't match any of the defined endpoints, the application will serve the "index.html" file from the wwwroot folder. This is useful for single-page applications (SPAs) where the client-side routing is handled by JavaScript, and all unknown routes should be directed to the main HTML file.
 
 app.Run(); // This line starts the application and begins listening for incoming HTTP requests. The app.Run() method blocks the calling thread and keeps the application running until it is stopped or terminated.
-    
