@@ -1,13 +1,27 @@
+# Unit Converter
+### Click project live below:
+[![Unit Converter](https://github.com/will-s-205/will-s-205.github.io/blob/main/fcc-portfolio/img/2026-07-03%20unit%20converter%20cover.png)](https://ebd0db33-ff67-45a2-bd5e-6426b8c31457-00-17zsuor2xli69.janeway.replit.dev/)
+Unit Converter is a simple web application built with C# and Minimal API that converts miles to kilometers and Fahrenheit to Celsius. The application uses an HTML interface with JavaScript to send user input to C# API endpoints, where the calculations are performed on the server. The results are returned as JSON and displayed on the webpage. This project demonstrates the basics of creating endpoints, handling HTTP requests, and connecting a frontend with a C# backend.
+## Goal
+Build a simple web application that performs unit conversions by connecting an HTML frontend with a C# backend using Minimal APIs.
+## Learned and practiced
+* Serving static HTML and CSS files.
+* Creating GET API endpoints in C#.
+* Sending HTTP requests using the JavaScript fetch() API.
+* Processing user input and returning JSON responses.
+* Performing server-side calculations in C#.
+* Displaying API results dynamically in the browser.
+* Connecting a frontend interface with a backend application.
 
 ===
 
-How to run:
+## How to run:
 Win11
-1 Make sure to install dotnet8 SDK https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.422-windows-x64-installer
-2 open your terminal and find folder with project
-3 make sure to comment line of code "builder.WebHost.UseUrls("http://0.0.0.0:5000");" in Programm.cs
-4 run "dotnet clean; dotnet build; dotnet run;"
-5 run "start http://localhost:5000" or manualy copy in your browser "http://localhost:5000"
+* Make sure to install dotnet8 SDK https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.422-windows-x64-installer
+* open your terminal and find folder with project
+* make sure to comment line of code "builder.WebHost.UseUrls("http://0.0.0.0:5000");" in Programm.cs
+* run "dotnet clean; dotnet build; dotnet run;"
+* run "start http://localhost:5000" or manualy copy in your browser "http://localhost:5000"
 
 ===
 
